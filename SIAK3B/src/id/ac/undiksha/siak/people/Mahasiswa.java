@@ -1,14 +1,30 @@
 package id.ac.undiksha.siak.people;
 
-public class Mahasiswa {
+import id.ac.undiksha.siak.organisasi.Prodi;
+
+public class Mahasiswa extends Manusia {
 	
 	private String nim;
-	private String nama;
-	private String alamat;
-	private String prodi;
-	private String tanggalLahir;
-	private boolean jenisKelamin;
 	
+	public Mahasiswa() {
+		super();
+		this.nim	="<masukkan nim>";
+	}
+
+	public Mahasiswa(
+			String nama, 
+			String alamat, 
+			String tanggalLahir, 
+			boolean jenisKelamin, 
+			
+			String nim,
+			String prodi
+		) {
+		super(nama, alamat, tanggalLahir, jenisKelamin);
+		
+		this.nim = nim;
+	}
+
 	public void setNim(String nim) {
 		this.nim = nim;
 	}
@@ -17,52 +33,16 @@ public class Mahasiswa {
 		return this.nim;
 	}
 
-	public String getNama() {
-		return nama;
-	}
-
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
-
-	public String getAlamat() {
-		return alamat;
-	}
-
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
-	}
-
-	public String getProdi() {
-		return prodi;
-	}
-
-	public void setProdi(String prodi) {
-		this.prodi = prodi;
-	}
-
-	public String getTanggalLahir() {
-		return tanggalLahir;
-	}
-
-	public void setTanggalLahir(String tanggalLahir) {
-		this.tanggalLahir = tanggalLahir;
-	}
-
-	public boolean isJenisKelamin() {
-		return jenisKelamin;
+	public void printAll() {
+		super.printAll();
+		System.out.println (this.getNim());	
 	}
 	
-	public String getJenisKelamin() {
-		if (this.isJenisKelamin()) {
-			return "Perempuan";
-		}else {
-			return "Laki-laki";
-		}
-	}
+	private Prodi prodi = new Prodi();
 
-	public void setJenisKelamin(boolean jenisKelamin) {
-		this.jenisKelamin = jenisKelamin;
+	public Prodi getProdi() {
+		return prodi;
 	}
+	
 	
 }

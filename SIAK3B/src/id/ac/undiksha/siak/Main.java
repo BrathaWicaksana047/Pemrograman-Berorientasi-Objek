@@ -1,60 +1,83 @@
 package id.ac.undiksha.siak;
 
 import id.ac.undiksha.siak.people.Mahasiswa;
+import id.ac.undiksha.siak.people.Manusia;
 import id.ac.undiksha.siak.people.Dosen;
 
 
 public class Main {
 	
-	public static void main(String[] args) { //TODO
-		
-		Mahasiswa ani = new Mahasiswa();
-		
-		ani.setNim("12345");
-		ani.setNama("Ani");
-		ani.setAlamat("Singaraja");
-		ani.setTanggalLahir("1 Januari 2000");
-		ani.setJenisKelamin(true);
-		ani.setProdi("Ilmu Komputer");
+	public static void main(String[] args) { 
 		
 		Dosen andre = new Dosen();
 		
-		andre.setNidn("45678");
+		andre.setNip("45678");
 		andre.setNama("Andre");
 		andre.setAlamat("Klungkung");
 		andre.setTanggalLahir("30 November 1980");
 		andre.setJenisKelamin(false);
 		andre.setMatakuliah("Mata Kuliah: Pemrograman Berorientasi Objek");
 		
+		System.out.println ("-------------------------------");	
 		
-		System.out.println (ani.getNim());
-		System.out.println (ani.getNama());
-		System.out.println (ani.getAlamat());
-		System.out.println (ani.getTanggalLahir());
-		System.out.println (ani.getJenisKelamin());
-		System.out.println (ani.getProdi());
-		
-		
-		System.out.println (andre.getNidn());
+		System.out.println (andre.getNip());
 		System.out.println (andre.getNama());
 		System.out.println (andre.getAlamat());
 		System.out.println (andre.getTanggalLahir());
 		System.out.println (andre.getJenisKelamin());
 		System.out.println (andre.getMatakuliah());
 		
+		System.out.println ("-------------------------------");	
 		
-		/*ani.nim 	="12345";
-		ani.nama	= "Ani";
-		ani.alamat	="Singaraja";
-		ani.tanggalLahir	="1 januari 2000";
-		ani.jenisKelamin	= true;
-		ani.prodi			="Ilmu Komputer";
+		Mahasiswa mhs1 = new Mahasiswa();
+		mhs1.printAll();
+		mhs1.getProdi().setKodeProdi("10");
+		mhs1.getProdi().setNamaProdi("ILKOM");
 		
-		System.out.println(ani.nim);
-		System.out.println(ani.nama);
-		System.out.println(ani.alamat);
-		System.out.println(ani.tanggalLahir);
-		System.out.println(ani.jenisKelamin);
-		System.out.println(ani.prodi);*/
+		System.out.println ("-------------------------------");	
+		
+		Mahasiswa siti = new Mahasiswa(
+				"Siti",
+				"Singaraja",
+				"09 Januari 2003",
+				true,
+				
+				"1223",
+				"ILKOM"
+				);
+		siti.printAll();
+		
+		System.out.println ("-------------------------------");	
+		
+		Dosen devi = new Dosen(
+				"Devi",
+				"Singaraja",
+				"16 Juli 1990",
+				true,
+				
+				"23145",
+				"Mata Kuliah: Matematika"
+				);
+		devi.printAll();
+		
+		System.out.println ("-------------------------------");	
+		
+		Dosen dewi = new Dosen(
+				"Dewi",
+				"Singaraja",
+				"26 Februari 1995",
+				true,
+				
+				"22314",
+				"Mata Kuliah: Aljabar Linear"
+				);
+		dewi.printAll();
+		
+		System.out.println ("-------------------------------");	
+		
+		Manusia mn1 = new Mahasiswa();
+		mn1.printAll();
+		
+		System.out.println ("-------------------------------");		
 	}
 }
